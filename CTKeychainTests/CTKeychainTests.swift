@@ -2,8 +2,8 @@
 //  CTKeychainTests.swift
 //  CTKeychainTests
 //
-//  Created by 和泉田 領一 on 2014/06/14.
-//  Copyright (c) 2014年 CAPH. All rights reserved.
+//  Created by Ryoichi Izumita on 2014/06/14.
+//  Copyright (c) 2014 CAPH. All rights reserved.
 //
 
 import XCTest
@@ -20,16 +20,25 @@ class CTKeychainTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testGetAndSetPassword() {
+        let service = "CTKeychain"
+        let account = "MyAccount"
+        let item = CTKeychainItem(service: service, account: account)
+        item.password = "testpass"
+        let password = item.password
+        if let actualPassword = password {
+            XCTAssertEqual("testpass", actualPassword)
+        } else {
+            XCTFail()
+        }
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    func testGetPasswordWithError() {
+        let item = CTKeychainItem(service: "CTKeychain", account: "withError")
+        var error: NSError? = nil
+        let password = item.getPassword(error: &error)
+        println(error)
+        XCTAssertNotNil(error)
     }
     
 }

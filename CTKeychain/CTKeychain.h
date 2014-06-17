@@ -2,7 +2,7 @@
 //  CTKeychain.h
 //  CTKeychain
 //
-//  Created by 和泉田 領一 on 2014/06/14.
+//  Created by Ryoichi Izumita on 2014/06/14.
 //  Copyright (c) 2014年 CAPH. All rights reserved.
 //
 

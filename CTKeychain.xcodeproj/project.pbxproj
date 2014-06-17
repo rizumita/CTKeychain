@@ -7,12 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A4D4C39194E8DFD00A74660 /* CTKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A4D4C38194E8DFD00A74660 /* CTKeychain.strings */; };
 		6A502CC2194C784B00510A79 /* CTKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A502CC1194C784B00510A79 /* CTKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A502CC8194C784B00510A79 /* CTKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A502CBC194C784B00510A79 /* CTKeychain.framework */; };
 		6A502CCF194C784B00510A79 /* CTKeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A502CCE194C784B00510A79 /* CTKeychainTests.swift */; };
+		6A502CD9194C787800510A79 /* CTKeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A502CD8194C787800510A79 /* CTKeychainItem.swift */; };
+		6A502CDA194C787800510A79 /* CTKeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A502CD8194C787800510A79 /* CTKeychainItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6A4D4C3C194E91BD00A74660 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A502CB3194C784B00510A79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A502CBB194C784B00510A79;
+			remoteInfo = CTKeychain;
+		};
+		6A4D4C3E194E91BD00A74660 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A502CB3194C784B00510A79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A502CBB194C784B00510A79;
+			remoteInfo = CTKeychain;
+		};
 		6A502CC9194C784B00510A79 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6A502CB3194C784B00510A79 /* Project object */;
@@ -23,12 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A4D4C38194E8DFD00A74660 /* CTKeychain.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = CTKeychain.strings; sourceTree = "<group>"; };
 		6A502CBC194C784B00510A79 /* CTKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CTKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A502CC0194C784B00510A79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A502CC1194C784B00510A79 /* CTKeychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTKeychain.h; sourceTree = "<group>"; };
 		6A502CC7194C784B00510A79 /* CTKeychainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CTKeychainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A502CCD194C784B00510A79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A502CCE194C784B00510A79 /* CTKeychainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTKeychainTests.swift; sourceTree = "<group>"; };
+		6A502CD8194C787800510A79 /* CTKeychainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTKeychainItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +92,8 @@
 			children = (
 				6A502CC1194C784B00510A79 /* CTKeychain.h */,
 				6A502CBF194C784B00510A79 /* Supporting Files */,
+				6A502CD8194C787800510A79 /* CTKeychainItem.swift */,
+				6A4D4C38194E8DFD00A74660 /* CTKeychain.strings */,
 			);
 			path = CTKeychain;
 			sourceTree = "<group>";
@@ -141,11 +162,14 @@
 				6A502CC3194C784B00510A79 /* Sources */,
 				6A502CC4194C784B00510A79 /* Frameworks */,
 				6A502CC5194C784B00510A79 /* Resources */,
+				6A4D4C3B194E8FD400A74660 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				6A502CCA194C784B00510A79 /* PBXTargetDependency */,
+				6A4D4C3D194E91BD00A74660 /* PBXTargetDependency */,
+				6A4D4C3F194E91BD00A74660 /* PBXTargetDependency */,
 			);
 			name = CTKeychainTests;
 			productName = CTKeychainTests;
@@ -193,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A4D4C39194E8DFD00A74660 /* CTKeychain.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,11 +230,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6A4D4C3B194E8FD400A74660 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "codesign --verify --force --sign \"$CODE_SIGN_IDENTITY\" \"$CODESIGNING_FOLDER_PATH\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6A502CB7194C784B00510A79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A502CD9194C787800510A79 /* CTKeychainItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A502CDA194C787800510A79 /* CTKeychainItem.swift in Sources */,
 				6A502CCF194C784B00510A79 /* CTKeychainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +267,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6A4D4C3D194E91BD00A74660 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A502CBB194C784B00510A79 /* CTKeychain */;
+			targetProxy = 6A4D4C3C194E91BD00A74660 /* PBXContainerItemProxy */;
+		};
+		6A4D4C3F194E91BD00A74660 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A502CBB194C784B00510A79 /* CTKeychain */;
+			targetProxy = 6A4D4C3E194E91BD00A74660 /* PBXContainerItemProxy */;
+		};
 		6A502CCA194C784B00510A79 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6A502CBB194C784B00510A79 /* CTKeychain */;
@@ -320,6 +373,8 @@
 		6A502CD3194C784B00510A79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -329,12 +384,16 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		6A502CD4194C784B00510A79 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -350,6 +409,8 @@
 		6A502CD6194C784B00510A79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ryoichi Izumita (EN969BRF5D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -368,6 +429,8 @@
 		6A502CD7194C784B00510A79 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -398,6 +461,7 @@
 				6A502CD4194C784B00510A79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6A502CD5194C784B00510A79 /* Build configuration list for PBXNativeTarget "CTKeychainTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +470,7 @@
 				6A502CD7194C784B00510A79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

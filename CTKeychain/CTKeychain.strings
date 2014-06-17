@@ -1,0 +1,10 @@
+"errorSecUnimplemented" = "errorSecUnimplemented";
+"errSecParam" = "errSecParam";
+"errSecAllocate" = "errSecAllocate";
+"errSecNotAvailable" = "errSecNotAvailable";
+"errSecDuplicateItem" = "errSecDuplicateItem";
+"errSecItemNotFound" = "errSecItemNotFound";
+"errSecInteractionNotAllowed" = "errSecInteractionNotAllowed";
+"errSecDecode" = "errSecDecode";
+"errSecAuthFailed" = "errSecAuthFailed";
+"errSecDefault" = "errSecDefault";
