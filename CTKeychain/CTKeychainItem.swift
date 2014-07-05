@@ -21,8 +21,8 @@ class CTKeychainItem {
     get {
         return getPassword()
     }
-    set(newPassword) {
-        setPassword(newPassword)
+    set {
+        setPassword(newValue)
     }
     }
     
@@ -93,7 +93,8 @@ class CTKeychainItem {
         let query = [
             Unmanaged<NSData>.fromOpaque(kSecClass.toOpaque()).takeUnretainedValue() : Unmanaged<NSData>.fromOpaque(kSecClassGenericPassword.toOpaque()).takeUnretainedValue(),
             Unmanaged<NSData>.fromOpaque(kSecAttrService.toOpaque()).takeUnretainedValue() : service,
-            Unmanaged<NSData>.fromOpaque(kSecAttrAccount.toOpaque()).takeUnretainedValue() : account
+            Unmanaged<NSData>.fromOpaque(kSecAttrAccount.toOpaque()).takeUnretainedValue() : account,
+            Unmanaged<NSData>.fromOpaque(kSecAttrSynchronizable.toOpaque()).takeUnretainedValue() : isSynchronized
             ] as NSDictionary
         let status = SecItemDelete(query as CFDictionaryRef)
         if Int(status) != errSecSuccess && error {
