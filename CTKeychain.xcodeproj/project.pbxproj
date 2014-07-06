@@ -10,9 +10,12 @@
 		6A4D4C39194E8DFD00A74660 /* CTKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A4D4C38194E8DFD00A74660 /* CTKeychain.strings */; };
 		6A502CC2194C784B00510A79 /* CTKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A502CC1194C784B00510A79 /* CTKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A502CC8194C784B00510A79 /* CTKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A502CBC194C784B00510A79 /* CTKeychain.framework */; };
-		6A502CCF194C784B00510A79 /* CTKeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A502CCE194C784B00510A79 /* CTKeychainTests.swift */; };
+		6A502CCF194C784B00510A79 /* CTKeychainItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A502CCE194C784B00510A79 /* CTKeychainItemTests.swift */; };
 		6A502CD9194C787800510A79 /* CTKeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A502CD8194C787800510A79 /* CTKeychainItem.swift */; };
 		6A502CDA194C787800510A79 /* CTKeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A502CD8194C787800510A79 /* CTKeychainItem.swift */; };
+		6AE34EA519694C6F00526B0F /* CTKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE34EA419694C6F00526B0F /* CTKeychain.swift */; };
+		6AE34EA619694C6F00526B0F /* CTKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE34EA419694C6F00526B0F /* CTKeychain.swift */; };
+		6AE34EA81969528200526B0F /* CTKeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE34EA71969528200526B0F /* CTKeychainTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +49,10 @@
 		6A502CC1194C784B00510A79 /* CTKeychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTKeychain.h; sourceTree = "<group>"; };
 		6A502CC7194C784B00510A79 /* CTKeychainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CTKeychainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A502CCD194C784B00510A79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A502CCE194C784B00510A79 /* CTKeychainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTKeychainTests.swift; sourceTree = "<group>"; };
+		6A502CCE194C784B00510A79 /* CTKeychainItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTKeychainItemTests.swift; sourceTree = "<group>"; };
 		6A502CD8194C787800510A79 /* CTKeychainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTKeychainItem.swift; sourceTree = "<group>"; };
+		6AE34EA419694C6F00526B0F /* CTKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTKeychain.swift; sourceTree = "<group>"; };
+		6AE34EA71969528200526B0F /* CTKeychainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTKeychainTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,7 @@
 			children = (
 				6A502CC1194C784B00510A79 /* CTKeychain.h */,
 				6A502CBF194C784B00510A79 /* Supporting Files */,
+				6AE34EA419694C6F00526B0F /* CTKeychain.swift */,
 				6A502CD8194C787800510A79 /* CTKeychainItem.swift */,
 				6A4D4C38194E8DFD00A74660 /* CTKeychain.strings */,
 			);
@@ -109,7 +115,8 @@
 		6A502CCB194C784B00510A79 /* CTKeychainTests */ = {
 			isa = PBXGroup;
 			children = (
-				6A502CCE194C784B00510A79 /* CTKeychainTests.swift */,
+				6AE34EA71969528200526B0F /* CTKeychainTests.swift */,
+				6A502CCE194C784B00510A79 /* CTKeychainItemTests.swift */,
 				6A502CCC194C784B00510A79 /* Supporting Files */,
 			);
 			path = CTKeychainTests;
@@ -251,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AE34EA519694C6F00526B0F /* CTKeychain.swift in Sources */,
 				6A502CD9194C787800510A79 /* CTKeychainItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +267,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AE34EA619694C6F00526B0F /* CTKeychain.swift in Sources */,
 				6A502CDA194C787800510A79 /* CTKeychainItem.swift in Sources */,
-				6A502CCF194C784B00510A79 /* CTKeychainTests.swift in Sources */,
+				6AE34EA81969528200526B0F /* CTKeychainTests.swift in Sources */,
+				6A502CCF194C784B00510A79 /* CTKeychainItemTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

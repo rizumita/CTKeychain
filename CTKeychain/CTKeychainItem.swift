@@ -26,10 +26,20 @@ class CTKeychainItem {
     }
     }
     
-    init(service: String, account: String, isSynchronized: Bool = true) {
+    init(service: String, account: String, isSynchronized: Bool? = nil) {
         self.service = service
         self.account = account
-        self.isSynchronized = isSynchronized
+        
+        if let sync = isSynchronized {
+            self.isSynchronized = sync
+        } else {
+            switch CTKeychain.synchronizationMode {
+            case .On:
+                self.isSynchronized = true
+            case .Off:
+                self.isSynchronized = false
+            }
+        }
     }
     
     func getPassword(error: NSErrorPointer = nil) -> String? {
