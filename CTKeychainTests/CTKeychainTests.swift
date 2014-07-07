@@ -20,11 +20,26 @@ class CTKeychainTests: XCTestCase {
         super.tearDown()
     }
 
-    func testExample() {
-        XCTAssertEqual(CTKeychain.synchronizationMode, CTKeychain.SynchronizationMode.On)
+    func testSynchronizationMode() {
+        XCTAssertEqual(CTKeychain.synchronizationMode, CTKeychain.SynchronizationMode.Any)
 
         CTKeychain.synchronizationMode = CTKeychain.SynchronizationMode.Off
         XCTAssertEqual(CTKeychain.synchronizationMode, CTKeychain.SynchronizationMode.Off)
+
+        CTKeychain.synchronizationMode = CTKeychain.SynchronizationMode.On
+        XCTAssertEqual(CTKeychain.synchronizationMode, CTKeychain.SynchronizationMode.On)
+    }
+    
+    func testAllItems() {
+        CTKeychain.synchronizationMode = CTKeychain.SynchronizationMode.Any
+        let service = "CTKeychain"
+        var item = CTKeychainItem(service: service, account: "Account1")
+        item.password = "testpass1"
+        item = CTKeychainItem(service: service, account: "Account2")
+        item.password = "testpass2"
+        
+        let items = CTKeychain.allItems(service)
+        XCTAssertGreaterThanOrEqual(items.count, 2)
     }
 
 }

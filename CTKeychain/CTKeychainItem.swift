@@ -38,6 +38,8 @@ class CTKeychainItem {
                 self.isSynchronized = true
             case .Off:
                 self.isSynchronized = false
+            case .Any:
+                self.isSynchronized = true
             }
         }
     }
@@ -55,7 +57,7 @@ class CTKeychainItem {
         let status = SecItemCopyMatching(query as CFDictionaryRef, &dataTypeRef)
 
         if Int(status) != errSecSuccess && error {
-            if let message = errorMessageWithCode(status) {
+            if let message = CTKeychain.errorMessageWithCode(status) {
                 error.memory = NSError.errorWithDomain(CTKeychainErrorDomain, code: Int(status), userInfo: [NSLocalizedDescriptionKey : message])
             }
             
@@ -88,7 +90,7 @@ class CTKeychainItem {
                 Unmanaged<NSData>.fromOpaque(kSecAttrSynchronizable.toOpaque()).takeUnretainedValue() : isSynchronized] as NSDictionary
             let status = SecItemAdd(query as CFDictionaryRef, nil)
             if Int(status) != errSecSuccess && error {
-                if let message = errorMessageWithCode(status) {
+                if let message = CTKeychain.errorMessageWithCode(status) {
                     error.memory = NSError.errorWithDomain(CTKeychainErrorDomain, code: Int(status), userInfo: [NSLocalizedDescriptionKey : message])
                 }
             }
@@ -108,7 +110,7 @@ class CTKeychainItem {
             ] as NSDictionary
         let status = SecItemDelete(query as CFDictionaryRef)
         if Int(status) != errSecSuccess && error {
-            if let message = errorMessageWithCode(status) {
+            if let message = CTKeychain.errorMessageWithCode(status) {
                 error.memory = NSError(domain: CTKeychainErrorDomain, code: Int(status), userInfo: [NSLocalizedDescriptionKey : message])
             }
         }
@@ -116,30 +118,4 @@ class CTKeychainItem {
         return Int(status) == errSecSuccess
     }
 
-    func errorMessageWithCode(code: OSStatus) -> String? {
-        switch (Int(code)) {
-        case errSecSuccess:
-            return nil;
-        case errSecUnimplemented:
-            return NSLocalizedString("errorSecUnimplemented", tableName: "CTKeychain", bundle: NSBundle(forClass: CTKeychainItem.self), comment: "errorSecUnimplemented")
-        case errSecParam:
-            return NSLocalizedString("errSecParam", tableName: "CTKeychain", bundle: NSBundle(forClass: CTKeychainItem.self), comment: "errSecParam")
-        case errSecAllocate:
-            return NSLocalizedString("errSecAllocate", tableName: "CTKeychain", bundle: NSBundle(forClass: CTKeychainItem.self), comment: "errSecAllocate")
-        case errSecNotAvailable:
-            return NSLocalizedString("errSecNotAvailable", tableName: "CTKeychain", bundle: NSBundle(forClass: CTKeychainItem.self), comment: "errSecNotAvailable")
-        case errSecDuplicateItem:
-            return NSLocalizedString("errSecDuplicateItem", tableName: "CTKeychain", bundle: NSBundle(forClass: CTKeychainItem.self), comment: "errSecDuplicateItem")
-        case errSecItemNotFound:
-            return NSLocalizedString("errSecItemNotFound", tableName: "CTKeychain", bundle: NSBundle(forClass: CTKeychainItem.self), comment: "errSecItemNotFound")
-        case errSecInteractionNotAllowed:
-            return NSLocalizedString("errSecInteractionNotAllowed", tableName: "CTKeychain", bundle: NSBundle(forClass: CTKeychainItem.self), comment: "errSecInteractionNotAllowed")
-        case errSecDecode:
-            return NSLocalizedString("errSecDecode", tableName: "CTKeychain", bundle: NSBundle(forClass: CTKeychainItem.self), comment: "errSecDecode")
-        case errSecAuthFailed:
-            return NSLocalizedString("errSecAuthFailed", tableName: "CTKeychain", bundle: NSBundle(forClass: CTKeychainItem.self), comment: "errSecAuthFailed")
-        default:
-            return NSLocalizedString("errSecDefault", tableName: "CTKeychain", bundle: NSBundle(forClass: CTKeychainItem.self), comment: "errSecDefault")
-        }
-    }
 }
